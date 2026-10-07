@@ -1,0 +1,44 @@
+# Secrets and environment
+.env
+.env.*
+!.env.example
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Test/tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Runtime data and logs
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+*.log
+
+# Local AI recordings may contain user/model content
+# Keep curated, sanitized fixtures in version control instead.
+tests/fixtures/live_model_latest.json
+
+# Playwright
+playwright-report/
+test-results/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/

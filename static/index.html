@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document Intake Assistant</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="top">
+    <div>
+      <h1>Document Intake Assistant</h1>
+      <p class="sub">Fictional Personal Wishes Document. Not legal advice.</p>
+    </div>
+    <div class="top-actions">
+      <span id="provider" class="chip"></span>
+      <button id="undo" class="ghost" type="button">Undo</button><button id="new-session" class="ghost" type="button">Start over</button>
+    </div>
+  </header>
+
+  <div id="banner" class="banner" role="alert" hidden></div>
+
+  <nav class="switch" aria-label="View">
+    <button type="button" data-view="chat" aria-pressed="true">Chat</button>
+    <button type="button" data-view="preview" aria-pressed="false">Preview</button>
+  </nav>
+
+  <main data-view="chat">
+    <section class="chat" aria-label="Conversation">
+      <ol id="messages" class="messages" aria-live="polite"></ol>
+      <p id="notice" class="notice" hidden></p>
+      <form id="composer" class="composer">
+        <label class="sr" for="input">Your message</label>
+        <textarea id="input" rows="2" maxlength="2000" placeholder="Type your answer. You can correct earlier answers too." required></textarea>
+        <button id="send" type="submit">Send</button>
+      </form>
+    </section>
+
+    <section class="preview" aria-label="Live preview">
+      <div class="progress">
+        <div class="bar"><span id="bar"></span></div>
+        <span id="progress-text"></span>
+      </div>
+      <div class="tabs" role="tablist">
+        <button role="tab" data-tab="doc" aria-selected="true" type="button">Draft document</button>
+        <button role="tab" data-tab="state" aria-selected="false" type="button">Structured state</button>
+      </div>
+      <article id="tab-doc" class="paper" role="tabpanel"><pre id="document"></pre></article>
+      <div class="export-actions"><button id="pdf" type="button">Export PDF</button><button id="docx" type="button">Export DOCX</button></div><div id="tab-state" class="statepanel" role="tabpanel" hidden>
+        <ul id="fields" class="fields"></ul>
+        <details><summary>Raw JSON</summary><pre id="raw"></pre></details>
+      </div>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

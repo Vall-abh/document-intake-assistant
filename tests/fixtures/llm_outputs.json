@@ -1,0 +1,120 @@
+{
+  "valid_single": {
+    "updates": [
+      {
+        "field": "full_name",
+        "value": "Jane Smith",
+        "confirmed": true
+      }
+    ],
+    "reply": "Thanks Jane! What is your home address?"
+  },
+  "multi_field": {
+    "updates": [
+      {
+        "field": "full_name",
+        "value": "Jane Smith"
+      },
+      {
+        "field": "executor.name",
+        "value": "James Smith"
+      },
+      {
+        "field": "executor.relationship",
+        "value": "brother"
+      },
+      {
+        "field": "has_children",
+        "value": false
+      }
+    ],
+    "reply": "Got it. What is your home address?"
+  },
+  "ambiguous_worldwide": {
+    "updates": [
+      {
+        "field": "covers_worldwide_assets",
+        "value": true,
+        "confirmed": false
+      }
+    ],
+    "reply": "Do you own assets abroad?"
+  },
+  "malformed_not_json": "Sure! I've saved your name as Jane.",
+  "malformed_fenced_valid": "```json\n{\"updates\": [], \"reply\": \"Hello there\"}\n```",
+  "malformed_wrong_shape": {
+    "updates": "full_name=Jane",
+    "reply": "ok"
+  },
+  "invalid_field_and_type": {
+    "updates": [
+      {
+        "field": "favourite_colour",
+        "value": "blue"
+      },
+      {
+        "field": "has_children",
+        "value": "maybe"
+      },
+      {
+        "field": "full_name",
+        "value": "Jane Smith"
+      }
+    ],
+    "reply": "Thanks, all saved!"
+  },
+  "children_when_none": {
+    "updates": [
+      {
+        "field": "children_names",
+        "value": [
+          "Tom"
+        ],
+        "confirmed": true
+      }
+    ],
+    "reply": "Tom noted."
+  },
+  "invented_name": {
+    "updates": [
+      {
+        "field": "full_name",
+        "value": "Jane Smith",
+        "confirmed": true
+      }
+    ],
+    "reply": "Hi Jane!"
+  },
+  "correct_name": {
+    "updates": [
+      {
+        "field": "full_name",
+        "value": "Jane Doe",
+        "confirmed": true
+      }
+    ],
+    "reply": "Updated."
+  },
+  "empty_reply": {
+    "updates": [
+      {
+        "field": "full_name",
+        "value": "Jane Smith",
+        "confirmed": true
+      }
+    ],
+    "reply": ""
+  },
+  "grounding_paraphrase": {
+    "updates": [
+      {
+        "field": "specific_gifts",
+        "value": [
+          "watch to Tom"
+        ],
+        "confirmed": true
+      }
+    ],
+    "reply": "Noted."
+  }
+}

@@ -1,0 +1,6 @@
+-r requirements.txt
+pytest>=8.0
+ruff>=0.6
+mypy>=1.11
+playwright>=1.45
+coverage>=7.6
